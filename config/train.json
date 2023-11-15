@@ -1,0 +1,38 @@
+{
+    "phase": "train", 
+    "cuda": "3",
+    "gpu_ids": [
+        0
+    ],
+    "verbose": "True",
+    "train_turn": 1,
+
+    "path": {
+        "out_path": "./data/"
+    },
+
+    "dataset": {
+        "train": {
+            "name": "farmland_select",
+            "epoch": 20,
+            "batch_size": 128,
+            "patch_size": 7,
+            "learning_rate":1,
+            "proportional": 0.05,
+            "step_size": 80
+
+        },
+        "test": {
+            "best_mode": "./data/river/output/2022_05_19_23_57/net_model.pkl"
+        }
+        
+    },
+    
+    "model": {
+        "method": "CAST",
+        "class_number": 2,
+        "transformer_model": "CAF",
+        "MLP_mode": "MLP",
+        "mode": "ViT"
+    }
+}
